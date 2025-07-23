@@ -9,7 +9,8 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/shobhit-pachkhande/devops-placement-project.git'
+                git branch: 'main', url: 'https://github.com/shobhit-pachkhande/devops-placement-project.git'
+
             }
         }
 
