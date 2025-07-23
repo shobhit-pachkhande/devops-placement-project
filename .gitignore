@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.env
+*.log
+*.db
+node_modules/
+venv/
+.DS_Store
+.idea/
+*.tar
+*.zip
+*.jar
+*.class
+docker-images/
+
