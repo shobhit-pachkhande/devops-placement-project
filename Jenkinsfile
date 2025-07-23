@@ -2,21 +2,22 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "shobhitpach/criminal-record-system"
+        DOCKER_IMAGE = "shobhitpach/user-service"   // ✅ Correct image name
         DOCKERHUB_CREDENTIALS = 'dockerhub'
     }
 
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/shobhit-pachkhande/devops-placement-project.git'
-
+                git 'https://github.com/shobhit-pachkhande/devops-placement-project.git'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE .'
+                dir('user-service') { // ✅ Go to the correct subdirectory
+                    sh 'docker build -t $DOCKER_IMAGE .'
+                }
             }
         }
 
