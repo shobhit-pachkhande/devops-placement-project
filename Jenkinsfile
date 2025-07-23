@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "shobhitpach/user-service"   // ✅ Correct image name
+        DOCKER_IMAGE = "shobhit55/user-service"   // ✅ Correct image name
         DOCKERHUB_CREDENTIALS = 'dockerhub'
     }
 
